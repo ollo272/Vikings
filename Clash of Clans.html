@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash of Clans Town Hall Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #FF6347; /* Tomato color */
+        }
+        h2 {
+            color: #4682B4; /* Steel Blue color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        select {
+            padding: 8px;
+            font-size: 16px;
+        }
+        .emoji {
+            font-size: 20px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clash of Clans Town Hall Details</h1>
+        <p>Select a Town Hall level to view details:</p>
+        <select id="townhallSelect" onchange="showDetails()">
+            <option value="">Select Town Hall Level</option>
+            <option value="TH1">Town Hall 1</option>
+            <option value="TH2">Town Hall 2</option>
+            <option value="TH3">Town Hall 3</option>
+            <option value="TH4">Town Hall 4</option>
+            <option value="TH5">Town Hall 5</option>
+            <option value="TH6">Town Hall 6</option>
+            <option value="TH7">Town Hall 7</option>
+            <option value="TH8">Town Hall 8</option>
+            <option value="TH9">Town Hall 9</option>
+            <option value="TH10">Town Hall 10</option>
+            <option value="TH11">Town Hall 11</option>
+            <option value="TH12">Town Hall 12</option>
+            <option value="TH13">Town Hall 13</option>
+            <option value="TH14">Town Hall 14</option>
+            <option value="TH15">Town Hall 15</option>
+            <option value="TH16">Town Hall 16</option>
+        </select>
+
+        <div id="detailsDisplay">
+            <!-- Details will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function showDetails() {
+            var selectedValue = document.getElementById("townhallSelect").value;
+            var thData = {
+                "TH1": { buildings: "None", troops: "None", pets: "None", spells: "None", siege_machines: "None", super_troops: "None" },
+                "TH2": { buildings: "Cannon: 2 | Archer Tower: 2 | Walls: 2", troops: "Barbarian: 2 | Archer: 2", pets: "None", spells: "None", siege_machines: "None", super_troops: "None" },
+                "TH3": { buildings: "Cannon: 3 | Archer Tower: 3 | Walls: 3 | Mortar: 1", troops: "Barbarian: 3 | Archer: 3 | Giant: 2 | Goblin: 2", pets: "None", spells: "None", siege_machines: "None", super_troops: "None" },
+                "TH4": { buildings: "Cannon: 4 | Archer Tower: 4 | Walls: 4 | Mortar: 2 | Air Defense: 1", troops: "Barbarian: 4 | Archer: 4 | Giant: 3 | Goblin: 3 | Wall Breaker: 2", pets: "None", spells: "None", siege_machines: "None", super_troops: "None" },
+                "TH5": { buildings: "Cannon: 5 | Archer Tower: 5 | Walls: 5 | Mortar: 3 | Air Defense: 3 | Wizard Tower: 2", troops: "Barbarian: 5 | Archer: 5 | Giant: 4 | Goblin: 4 | Wall Breaker: 3 | Balloon: 2", pets: "None", spells: "Lightning Spell: 6 | Healing Spell: 6 | Rage Spell: 6 | Jump Spell: 3 | Freeze Spell: 6", siege_machines: "None", super_troops: "Super Barbarian: 3 | Super Archer: 3 | Super Giant: 3 | Sneaky Goblin: 3 | Super Wall Breaker: 3" },
+                "TH6": { buildings: "Cannon: 7 | Archer Tower: 7 | Walls: 6 | Mortar: 4 | Air Defense: 4 | Wizard Tower: 3", troops: "Barbarian: 6 | Archer: 6 | Giant: 5 | Goblin: 5 | Wall Breaker: 4 | Balloon: 3 | Wizard: 3", pets: "None", spells: "Lightning Spell: 6 | Healing Spell: 6 | Rage Spell: 6 | Jump Spell: 3 | Freeze Spell: 6", siege_machines: "None", super_troops: "Super Barbarian: 3 | Super Archer: 3 | Super Giant: 3 | Sneaky Goblin: 3 | Super Wall Breaker: 3" },
+                "TH7": { buildings: "Cannon: 8 | Archer Tower: 8 | Walls: 7 | Mortar: 5 | Air Defense: 5 | Wizard Tower: 4 | Hidden Tesla: 3", troops: "Barbarian: 7 | Archer: 7 | Giant: 6 | Goblin: 6 | Wall Breaker: 5 | Balloon: 4 | Wizard: 4 | Healer: 2 | Dragon: 2", pets: "None", spells: "Lightning Spell: 6 | Healing Spell: 6 | Rage Spell: 6 | Jump Spell: 3 | Freeze Spell: 6", siege_machines: "None", super_troops: "Super Barbarian: 3 | Super Archer: 3 | Super Giant: 3 | Sneaky Goblin: 3 | Super Wall Breaker: 3" },
+                "TH8": { buildings: "Cannon: 10 | Archer Tower: 10 | Walls: 8 | Mortar: 6 | Air Defense: 6 | Wizard Tower: 6 | Hidden Tesla: 6", troops: "Barbarian: 8 | Archer: 8 | Giant: 8 | Goblin: 7 | Wall Breaker: 6 | Balloon: 6 | Wizard: 6 | Healer: 3 | Dragon: 3 | P.E.K.K.A: 3", pets: "None", spells: "Lightning Spell: 6 | Healing Spell: 6 | Rage Spell: 6 | Jump Spell: 3 | Freeze Spell: 6", siege_machines: "Wall Wrecker: 2 | Battle Blimp: 2 | Stone Slammer: 2", super_troops: "Super Barbarian: 3 | Super Archer: 3 | Super Giant: 3 | Sneaky Goblin: 3 | Super Wall Breaker: 3" },
+                "TH9": { buildings: "Cannon: 11 | Archer Tower: 11 | Walls: 9 | Mortar: 7 | Air Defense: 7 | Wizard Tower: 7 | Hidden Tesla: 7 | X-Bow: 3", troops: "Barbarian: 10 | Archer: 10 | Giant: 10 | Goblin: 7 | Wall Breaker: 6 | Balloon: 6 | Wizard: 6 | Healer: 4 | Dragon: 4 | P.E.K.K.A: 5", pets: "None", spells: "Lightning Spell: 6 | Healing Spell: 6 | Rage Spell: 6 | Jump Spell: 3 | Freeze Spell: 6", siege_machines: "Wall Wrecker: 3 | Battle Blimp: 3 | Stone Slammer: 3", super_troops: "Super Barbarian: 3 | Super Archer: 3 | Super Giant: 3 | Sneaky Goblin: 3 | Super Wall Breaker: 3" },
+                "TH10": { buildings: "Cannon: 12 | Archer Tower: 12 | Walls: 10 | Mortar: 8 | Air Defense: 8 | Wizard Tower: 8 | Hidden Tesla: 8 | X-Bow: 4 | Inferno Tower: 3", troops: "Barbarian: 12 | Archer: 12 | Giant: 12 | Goblin: 7 | Wall Breaker: 6 | Balloon: 7 | Wizard: 8 | Healer: 4 | Dragon: 5 | P.E.K.K.A: 6 | Minion: 5 | Hog Rider: 6 | Valkyrie: 5 | Golem: 5 | Witch: 3 | Lava Hound: 3", pets: "None", spells: "Lightning Spell: 7 | Healing Spell: 7 | Rage Spell: 7 | Jump Spell: 4 | Freeze Spell: 7 | Clone Spell: 6", siege_machines: "Wall Wrecker: 4 | Battle Blimp: 4 | Stone Slammer: 4", super_troops: "Super Barbarian: 3 | Super Archer: 3 | Super Giant: 3 | Sneaky Goblin: 3 | Super Wall Breaker: 3" },
+                "TH11": { buildings: "Cannon: 14 | Archer Tower: 14 | Walls: 11 | Mortar: 9 | Air Defense: 9 | Wizard Tower: 10 | Hidden Tesla: 9 | X-Bow: 5 | Inferno Tower: 5 | Eagle Artillery: 2", troops: "Barbarian: 14 | Archer: 14 | Giant: 14 | Goblin: 7 | Wall Breaker: 7 | Balloon: 8 | Wizard: 9 | Healer: 5 | Dragon: 6 | P.E.K.K.A: 7 | Minion: 7 | Hog Rider: 7 | Valkyrie: 6 | Golem: 7 | Witch: 4 | Lava Hound: 5 | Bowler: 4", pets: "None", spells: "Lightning Spell: 7 | Healing Spell: 7 | Rage Spell: 7 | Jump Spell: 4 | Freeze Spell: 7 | Clone Spell: 6", siege_machines: "Wall Wrecker: 5 | Battle Blimp: 5 | Stone Slammer: 5", super_troops: "Super Barbarian: 3 | Super Archer: 3 | Super Giant: 3 | Sneaky Goblin: 3 | Super Wall Breaker: 3" },
+                "TH12": { buildings: "Cannon: 15 | Archer Tower: 15 | Walls: 12 | Mortar: 10 | Air Defense: 10 | Wizard Tower: 11 | Hidden Tesla: 10 | X-Bow: 6 | Inferno Tower: 6 | Eagle Artillery: 3 | Giga Tesla: 5", troops: "Barbarian: 16 | Archer: 16 | Giant: 16 | Goblin: 8 | Wall Breaker: 8 | Balloon: 9 | Wizard: 10 | Healer: 6 | Dragon: 7 | P.E.K.K.A: 8 | Minion: 8 | Hog Rider: 8 | Valkyrie: 7 | Golem: 8 | Witch: 5 | Lava Hound: 6 | Bowler: 5 | Ice Golem: 4", pets: "None", spells: "Lightning Spell: 8 | Healing Spell: 8 | Rage Spell: 8 | Jump Spell: 5 | Freeze Spell: 8 | Clone Spell: 6 | Earthquake Spell: 4", siege_machines: "Wall Wrecker: 6 | Battle Blimp: 6 | Stone Slammer: 6", super_troops: "Super Barbarian: 4 | Super Archer: 4 | Super Giant: 4 | Sneaky Goblin: 4 | Super Wall Breaker: 4" },
+                "TH13": { buildings: "Cannon: 16 | Archer Tower: 16 | Walls: 13 | Mortar: 11 | Air Defense: 11 | Wizard Tower: 12 | Hidden Tesla: 11 | X-Bow: 7 | Inferno Tower: 7 | Eagle Artillery: 4 | Giga Inferno: 5 | Scattershot: 2", troops: "Barbarian: 18 | Archer: 18 | Giant: 18 | Goblin: 8 | Wall Breaker: 9 | Balloon: 10 | Wizard: 11 | Healer: 7 | Dragon: 8 | P.E.K.K.A: 9 | Minion: 9 | Hog Rider: 9 | Valkyrie: 8 | Golem: 9 | Witch: 6 | Lava Hound: 7 | Bowler: 6 | Ice Golem: 5 | Electro Dragon: 4 | Yeti: 3", pets: "L.A.S.S.I: 10 | Electro Owl: 10 | Mighty Yak: 10 | Unicorn: 10", spells: "Lightning Spell: 8 | Healing Spell: 8 | Rage Spell: 8 | Jump Spell: 5 | Freeze Spell: 8 | Clone Spell: 6 | Earthquake Spell: 4", siege_machines: "Wall Wrecker: 7 | Battle Blimp: 7 | Stone Slammer: 7", super_troops: "Super Barbarian: 4 | Super Archer: 4 | Super Giant: 4 | Sneaky Goblin: 4 | Super Wall Breaker: 4" },
+                "TH14": { buildings: "Cannon: 17 | Archer Tower: 17 | Walls: 14 | Mortar: 12 | Air Defense: 12 | Wizard Tower: 13 | Hidden Tesla: 12 | X-Bow: 8 | Inferno Tower: 8 | Eagle Artillery: 5 | Giga Inferno: 5 | Scattershot: 3 | Bomb Tower: 9 | Builder's Hut: 4 | Pet House: 4", troops: "Barbarian: 20 | Archer: 20 | Giant: 20 | Goblin: 9 | Wall Breaker: 10 | Balloon: 11 | Wizard: 12 | Healer: 8 | Dragon: 9 | P.E.K.K.A: 10 | Minion: 10 | Hog Rider: 10 | Valkyrie: 9 | Golem: 10 | Witch: 7 | Lava Hound: 8 | Bowler: 7 | Ice Golem: 6 | Electro Dragon: 5 | Yeti: 4 | Dragon Rider: 3 | Head Hunter: 3 | Super Troops: 11", pets: "L.A.S.S.I: 10 | Electro Owl: 10 | Mighty Yak: 10 | Unicorn: 10", spells: "Lightning Spell: 8 | Healing Spell: 8 | Rage Spell: 8 | Jump Spell: 5 | Freeze Spell: 8 | Clone Spell: 6 | Earthquake Spell: 4", siege_machines: "Wall Wrecker: 8 | Battle Blimp: 8 | Stone Slammer: 8 | Siege Barracks: 2", super_troops: "Super Barbarian: 4 | Super Archer: 4 | Super Giant: 4 | Sneaky Goblin: 4 | Super Wall Breaker: 4" },
+                "TH15": { buildings: "Cannon: 20 | Archer Tower: 20 | Walls: 15 | Mortar: 15 | Air Defense: 15 | Wizard Tower: 15 | Hidden Tesla: 15 | X-Bow: 10 | Inferno Tower: 10 | Eagle Artillery: 6 | Giga Inferno: 5 | Scattershot: 5 | Bomb Tower: 10 | Builder's Hut: 5 | Pet House: 5 | Spell Factory: 7", troops: "Barbarian: 22 | Archer: 22 | Giant: 22 | Goblin: 10 | Wall Breaker: 11 | Balloon: 12 | Wizard: 13 | Healer: 9 | Dragon: 10 | P.E.K.K.A: 11 | Minion: 11 | Hog Rider: 11 | Valkyrie: 10 | Golem: 11 | Witch: 8 | Lava Hound: 9 | Bowler: 8 | Ice Golem: 7 | Electro Dragon: 6 | Yeti: 5 | Dragon Rider: 4 | Head Hunter: 4 | Super Troops: 12", pets: "L.A.S.S.I: 15 | Electro Owl: 15 | Mighty Yak: 15 | Unicorn: 15 | Frosty: 15 | Diggy: 15 | Poison Lizard: 15 | Phoenix: 15", spells: "Lightning Spell: 9 | Healing Spell: 9 | Rage Spell: 9 | Jump Spell: 6 | Freeze Spell: 9 | Clone Spell: 7 | Earthquake Spell: 5 | Poison Spell: 5", siege_machines: "Wall Wrecker: 10 | Battle Blimp: 10 | Stone Slammer: 10 | Siege Barracks: 3", super_troops: "Super Barbarian: 5 | Super Archer: 5 | Super Giant: 5 | Sneaky Goblin: 5 | Super Wall Breaker: 5" },
+                "TH16": { buildings: "Cannon: 23 | Archer Tower: 23 | Walls: 16 | Mortar: 18 | Air Defense: 18 | Wizard Tower: 18 | Hidden Tesla: 18 | X-Bow: 12 | Inferno Tower: 12 | Eagle Artillery: 7 | Giga Inferno: 5 | Scattershot: 7 | Bomb Tower: 12 | Builder's Hut: 6 | Pet House: 6 | Spell Factory: 8", troops: "Barbarian: 25 | Archer: 25 | Giant: 25 | Goblin: 12 | Wall Breaker: 13 | Balloon: 14 | Wizard: 15 | Healer: 10 | Dragon: 12 | P.E.K.K.A: 13 | Minion: 13 | Hog Rider: 13 | Valkyrie: 12 | Golem: 13 | Witch: 9 | Lava Hound: 11 | Bowler: 10 | Ice Golem: 8 | Electro Dragon: 8 | Yeti: 6 | Dragon Rider: 5 | Head Hunter: 5 | Super Troops: 14", pets: "L.A.S.S.I: 20 | Electro Owl: 20 | Mighty Yak: 20 | Unicorn: 20 | Frosty: 20 | Diggy: 20 | Poison Lizard: 20 | Phoenix: 20 | Spike: 20 | Thunderbolt: 20", spells: "Lightning Spell: 9 | Healing Spell: 9 | Rage Spell: 9 | Jump Spell: 6 | Freeze Spell: 9 | Clone Spell: 7 | Earthquake Spell: 5 | Poison Spell: 5", siege_machines: "Wall Wrecker: 12 | Battle Blimp: 12 | Stone Slammer: 12 | Siege Barracks: 4", super_troops: "Super Barbarian: 6 | Super Archer: 6 | Super Giant: 6 | Sneaky Goblin: 6 | Super Wall Breaker: 6" }
+            };
+
+            var selectedTH = thData[selectedValue];
+            if (selectedTH) {
+                var detailsHTML = `
+                    <h2>${selectedValue}</h2>
+                    <table>
+                        <tr><th colspan="3">Buildings <span class="emoji">&#x1F3D8;</span></th></tr>
+                        <tr><td colspan="3">${selectedTH.buildings}</td></tr>
+                        <tr><th colspan="3">Troops <span class="emoji">&#x1F984;</span></th></tr>
+                        <tr><td colspan="3">${selectedTH.troops}</td></tr>
+                        <tr><th colspan="3">Spells <span class="emoji">&#x1F4A5;</span></th></tr>
+                        <tr><td colspan="3">${selectedTH.spells}</td></tr>
+                        <tr><th colspan="3">Siege Machines <span class="emoji">&#x1F527;</span></th></tr>
+                        <tr><td colspan="3">${selectedTH.siege_machines}</td></tr>
+                        <tr><th colspan="3">Super Troops <span class="emoji">&#x1F525;</span></th></tr>
+                        <tr><td colspan="3">${selectedTH.super_troops}</td></tr>
+                        <tr><th colspan="3">Pets <span class="emoji">&#x1F431;</span></th></tr>
+                        <tr><td colspan="3">${selectedTH.pets}</td></tr>
+                    </table>
+                `;
+                document.getElementById("detailsDisplay").innerHTML = detailsHTML;
+            } else {
+                document.getElementById("detailsDisplay").innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
